@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <a (click)="deslogar()">Deslogar</a>
+      <a (click)="deslogar()"><b>Deslogar</b></a>
     </ion-buttons>
     <ion-title>
       Home
@@ -12,16 +12,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-list>
+<ion-content class="fundo">
+  <div class="fundo">  
+    <ion-list color="primary">
       <ion-card *ngFor="let filme of lista_filmes" (click)="detalhesFilme(filme)">
         <ion-card-header>
-          <ion-card-title>{{filme.title}}</ion-card-title>
+          <ion-card-title><b>{{filme.title}}</b></ion-card-title>
           <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path"></ion-img>
         </ion-card-header>
       </ion-card>
     </ion-list>  
 
     <ion-button (click)="carregarMaisFilmes()">Carregar mais filmes</ion-button>
-    
+  </div>  
 </ion-content>

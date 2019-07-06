@@ -1,0 +1,22 @@
+.caixa-login{
+    margin-top: 30%;
+    margin-left: 10%;
+    width: 80%;
+    height: 50%;
+    background: grey;
+    opacity: 0.9;
+}
+
+ion-title{
+    text-align: center;
+    color: blue;
+}
+
+b{
+    color: blue;
+}
+
+ion-content.fundo{
+    background-color: black;
+    --background: url(../../assets/fundo.png) center no-repeat;
+}

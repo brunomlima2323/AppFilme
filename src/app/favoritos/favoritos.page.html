@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Filmes favoritos</ion-title>
+    <ion-title><b>Filmes favoritos</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fundo">
 
-  <ion-list>
+  <ion-list color="primary">
     <ion-card *ngFor="let filme of filmes">
       <ion-card-header (click)="detalhesFilme(filme)">
-        <ion-card-title>{{filme.title}}</ion-card-title>
+        <ion-card-title><b>{{filme.title}}</b></ion-card-title>
         <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path"></ion-img>
       </ion-card-header>
       <ion-icon name="heart" size="large" (click)="desfavoritarFilme(filme.id)"></ion-icon>

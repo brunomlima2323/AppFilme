@@ -1,22 +1,22 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Detalhes do filme</ion-title>
+    <ion-title><b>Detalhes do filme</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fundo">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{filme.title}}</ion-card-title>
+      <ion-card-title><b>{{filme.title}}</b></ion-card-title>
       <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path"></ion-img>
       <ion-icon name="{{filme_favoritado}}" size="large" (click)="favoritarFilme()"></ion-icon>
     </ion-card-header>
   
     <ion-card-content>
-      <b>Sinopse: </b>{{filme.overview}}<br/>
+      <b>Sinopse: {{filme.overview}}</b><br/>
     </ion-card-content>
     
   </ion-card>

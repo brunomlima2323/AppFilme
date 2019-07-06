@@ -1,24 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title><b>Login</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label>Usuario</ion-label>
-    <ion-input type="text" [(ngModel)]="campo.usuario" (ionChange)="apagarErro()" name="usuario"></ion-input>
-  </ion-item>
+<ion-content class="fundo">
+  <div class="caixa-login">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="campo.usuario" (ionChange)="apagarErro()" name="usuario"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Senha</ion-label>
-    <ion-input type="password" [(ngModel)]="campo.senha" (ionChange)="apagarErro()" name="senha"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="campo.senha" (ionChange)="apagarErro()" name="senha"></ion-input>
+    </ion-item>
 
-  <ion-button expand="full" (click)="fazerLogin()">Fazer Login</ion-button>
-  <p style="color: red; text-align: center;">{{erro}}</p>
-  <br/>
-  <br/>
-  <ion-button expand="full" (click)="fazerCadastro()">Realizar Cadastro</ion-button>
+    <ion-button expand="full" (click)="fazerLogin()">Fazer Login</ion-button>
+    <p style="color: red; text-align: center;">{{erro}}</p>
+    <br/>
+    <br/>
+    <ion-button expand="full" (click)="fazerCadastro()">Realizar Cadastro</ion-button>
+  </div>
   
 </ion-content>

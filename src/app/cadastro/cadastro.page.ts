@@ -24,6 +24,7 @@ export class CadastroPage{
   }
 
   fazerCadastro(){
+    console.log(this.campo);
     this.servidor.fazerCadastro(this.campo).subscribe(data =>{
       console.log(data);
       this.retornoCadastro = (data as any)._body;
@@ -33,6 +34,7 @@ export class CadastroPage{
       }else if(this.retornoCadastro == "Necessário passar usuário e senha"){
         this.erro = "Necessário passar usuário e senha"
       }else if(this.retornoCadastro == "true"){
+        console.log("igual a true");
         this.mostrarAlert();
       }
     },error =>{
