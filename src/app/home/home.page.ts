@@ -14,7 +14,6 @@ export class HomePage {
   pagina = 1;
   constructor(public servidor: ServidorProviderService, private router: Router) {
     this.verificarLogado();
-    this.retornarFilmes();
   }
 
   carregarMaisFilmes(){
@@ -35,6 +34,8 @@ export class HomePage {
     console.log(this.logado);
     if(this.logado != "sim"){
       this.router.navigate(['login']);
+    }else{
+      this.retornarFilmes();
     }
   }
 

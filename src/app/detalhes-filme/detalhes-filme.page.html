@@ -12,10 +12,12 @@
     <ion-card-header>
       <ion-card-title>{{filme.title}}</ion-card-title>
       <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path"></ion-img>
+      <ion-icon name="{{filme_favoritado}}" size="large" (click)="favoritarFilme()"></ion-icon>
     </ion-card-header>
   
     <ion-card-content>
       <b>Sinopse: </b>{{filme.overview}}<br/>
     </ion-card-content>
+    
   </ion-card>
 </ion-content>

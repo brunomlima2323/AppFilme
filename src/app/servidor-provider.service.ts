@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 })
 export class ServidorProviderService {
 
-  url: string = "http://192.168.0.4/backFilme/";
+  url: string = "https://appfilme.000webhostapp.com/";
   
   constructor(public http: Http) {
     console.log('SeridorProvider');  
@@ -17,7 +17,7 @@ export class ServidorProviderService {
     postData.append('usuario', campo.usuario);
     postData.append('senha', campo.senha);
     console.log(campo);
-    return this.http.post(this.url+'teste_conexao.php', postData);
+    return this.http.post(this.url+'cadastro.php', postData);
   }
 
   verificaLogado(){
@@ -38,6 +38,21 @@ export class ServidorProviderService {
     return this.http.get("https://api.themoviedb.org/3/movie/popular?page="+pagina+"&language=pt-BR&api_key=8cfaeaaa6188782fdb202c89bf369a3f");
   }
 
-  
+  getFilme(idfilme){
+    return this.http.get("https://api.themoviedb.org/3/movie/"+idfilme+"?language=pt-BR&api_key=8cfaeaaa6188782fdb202c89bf369a3f");
+  }
+
+  favoritarFilme(usuario_id, filme_id){
+    let postData = new FormData();
+    postData.append('usuario_id', usuario_id);
+    postData.append('filme_id', filme_id);
+    return this.http.post(this.url + "favorita_filme.php", postData);
+  }
+
+  getFilmesFavoritos(usuario_id){
+    let postData = new FormData();
+    postData.append('usuario_id', usuario_id);
+    return this.http.post(this.url + "retorna_filmes_favoritos.php", postData);
+  }
 
 }

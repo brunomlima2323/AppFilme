@@ -25,7 +25,8 @@ let routes: Routes = [
   },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'detalhes-filme', loadChildren: './detalhes-filme/detalhes-filme.module#DetalhesFilmePageModule' },
-  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' }
+  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
+  { path: 'favoritos', loadChildren: './favoritos/favoritos.module#FavoritosPageModule' }
 ];
 
 @NgModule({
