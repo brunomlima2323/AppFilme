@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <a (click)="deslogar()">Deslogar</a>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+    <ion-card *ngFor="let filme of lista_filmes">
+      <ion-card-header>
+        <ion-card-title>{{filme.title}}</ion-card-title>
+        <ion-img [src]="'https://image.tmdb.org/t/p/w500/' + filme.poster_path"></ion-img>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+    
+</ion-content>
