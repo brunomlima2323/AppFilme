@@ -11,9 +11,23 @@ export class HomePage {
   contatos: any;
   lista_filmes: any;
   logado: any;
+  pagina = 1;
   constructor(public servidor: ServidorProviderService, private router: Router) {
     this.verificarLogado();
     this.retornarFilmes();
+  }
+
+  carregarMaisFilmes(){
+    console.log(this.pagina);
+    this.pagina = ++this.pagina;
+    this.retornarFilmes();
+  }
+
+  detalhesFilme(filme){
+    console.log(filme);
+    this.router.navigateByUrl('/detalhes-filme', {
+      state: { filme: filme }
+    })
   }
 
   verificarLogado(){
@@ -31,10 +45,16 @@ export class HomePage {
   }
 
   retornarFilmes(){
-    this.servidor.getFilmes().subscribe(data =>{
+    console.log(this.pagina);
+    this.servidor.getFilmes(this.pagina).subscribe(data =>{
       data = JSON.parse((data as any)._body);
-      this.lista_filmes = data['results'];
-      console.log(this.lista_filmes);
+      if(this.pagina == 1){
+        this.lista_filmes = data['results'];
+        console.log(this.lista_filmes);
+      }else{
+        this.lista_filmes = this.lista_filmes.concat(data['results']);
+        console.log(this.lista_filmes);
+      }
     }, error =>{
       console.log(error);
     });

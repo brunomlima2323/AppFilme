@@ -37,6 +37,10 @@ export class LoginPage {
     });
   }
 
+  fazerCadastro(){
+    this.router.navigate(['cadastro']);
+  }
+
   apagarErro(){
     this.erro = "";
   }

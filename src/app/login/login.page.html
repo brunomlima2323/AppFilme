@@ -11,14 +11,14 @@
   </ion-item>
 
   <ion-item>
-      <ion-label>Senha</ion-label>
-      <ion-input type="password" [(ngModel)]="campo.senha" (ionChange)="apagarErro()" name="senha"></ion-input>
-    </ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="campo.senha" (ionChange)="apagarErro()" name="senha"></ion-input>
+  </ion-item>
 
   <ion-button expand="full" (click)="fazerLogin()">Fazer Login</ion-button>
   <p style="color: red; text-align: center;">{{erro}}</p>
   <br/>
   <br/>
-  <ion-button expand="full">Realizar Cadastro</ion-button>
+  <ion-button expand="full" (click)="fazerCadastro()">Realizar Cadastro</ion-button>
   
 </ion-content>

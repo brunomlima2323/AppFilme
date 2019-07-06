@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>cadastro</ion-title>
+    <ion-buttons slot="end">
+      <a (click)="voltar()">Voltar</a>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-item>
+      <ion-label>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="campo.usuario" (ionChange)="apagarErro()" name="usuario"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="campo.senha" (ionChange)="apagarErro()" name="senha"></ion-input>
+    </ion-item>
+    <p *ngIf="erro != ''" style="color: red;">{{erro}}</p>
 
+    <ion-button (click)="fazerCadastro()">Fazer Cadastro</ion-button>
 </ion-content>
